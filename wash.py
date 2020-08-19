@@ -11,6 +11,7 @@ import argparse
 import datetime
 from pathlib import Path
 import pandas as pd
+#import modin.pandas as pd
 from log import get_my_logger
 
 RENAME_DICT = {'市场代码':'[23]Exg', '合约代码':'[1]Code',
@@ -30,6 +31,7 @@ logger = get_my_logger([['info.log', logging.INFO],
                         ['warning.log', logging.WARNING],
                         ['error.log', logging.ERROR]])
 
+
 def single_file(file):
     df = pd.read_csv(file, encoding='gb2312', converters={'时间':pd.Timestamp})
     if not df.empty:
@@ -40,7 +42,7 @@ def single_file(file):
         df['[2]TradingDate'] = (df['[5]TradingDateTime'].dt
                                 .date.apply(lambda x: x.strftime('%Y%m%d')))
         df['[3]TradingTime'] = (df['[5]TradingDateTime'].dt.time
-                                .apply(lambda x: x.strftime('%H%M%S%f')).str[0:-3])
+                                .apply(lambda x: x.strftime('%H%M%S%f')).str.slice(0,-3))
         df['[4]TradeDate'] = re.compile('\d{8}').search(file).group()
         df['[22]Multipiler'] = (df['[8]TurnoverAmount']
                                 /(df['[6]LastPrice']*df['[7]Volume'])).round(1)
