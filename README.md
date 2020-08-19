@@ -5,7 +5,7 @@ test.sh is a shell script that unrar the given rar file and activate wash.py.
 wash.py washes the data and generates a summary csv file.
 
 The png shows rar file stucture:
-   * ![rar structure](https://raw.githubusercontent.com/Wayne-Liu-98/unrar_and_wash/blob/master/rar_structure.png)
+   * ![rar structure](https://raw.githubusercontent.com/Wayne-Liu-98/unrar_and_wash/master/rar_structure.png)
 
 
 Working period:
