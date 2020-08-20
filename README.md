@@ -4,8 +4,9 @@ test.sh is a shell script that unrar the given rar file and activate wash.py.
 
 wash.py washes the data and generates a summary csv file.
 
-The png shows rar file stucture:
-   * ![rar structure](https://raw.githubusercontent.com/Wayne-Liu-98/unrar_and_wash/master/rar_structure.png)
+Our rar file, put in the same folder as the scripts, contains an amount of csv files whose names contain date information in yyyymmdd format.
+
+data_structure.txt shows data structure in each of csv file.
 
 
 Working period:
