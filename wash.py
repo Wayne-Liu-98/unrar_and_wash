@@ -39,10 +39,8 @@ def single_file(file):
         df['[19]Open'] = df['[6]LastPrice'][0]
         df['[20]Low'] = df['[6]LastPrice'].min()
         df['[21]High'] = df['[6]LastPrice'].max()
-        df['[2]TradingDate'] = (df['[5]TradingDateTime'].dt
-                                .date.apply(lambda x: x.strftime('%Y%m%d')))
-        df['[3]TradingTime'] = (df['[5]TradingDateTime'].dt.time
-                                .apply(lambda x: x.strftime('%H%M%S%f')).str.slice(0,-3))
+        df['[2]TradingDate'] = (df['[5]TradingDateTime'].dt.date.astype(str).str.replace("-", "")
+        df['[3]TradingTime'] = (df['[5]TradingDateTime'].dt.time.astype(str).str.extract("([0-9:]+)", expand=False).str.replace(":", "")+"000"
         df['[4]TradeDate'] = re.compile('\d{8}').search(file).group()
         df['[22]Multipiler'] = (df['[8]TurnoverAmount']
                                 /(df['[6]LastPrice']*df['[7]Volume'])).round(1)
