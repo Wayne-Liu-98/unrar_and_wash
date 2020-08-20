@@ -92,7 +92,7 @@ def inputs_date_list():
     return [path, [x.strftime('%Y%m%d') for x in pd.date_range(start, end)]]
 
 
-def demo():
+def run():
     path = inputs_date_list()[0]
     date_list = inputs_date_list()[1]
     try:
@@ -115,4 +115,4 @@ def demo():
 
 
 if __name__=="__main__":
-    demo()
+    run()
