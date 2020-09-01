@@ -8,6 +8,8 @@ Our rar file, put in the same folder as the scripts, contains an amount of csv f
 
 data_structure.txt shows data structure in each of csv file.
 
+The two test .sh files are test versions that generates washed csv for 20200803 under relative directory in wash_and_rar
+
 
 Working period:
 -------------------------
