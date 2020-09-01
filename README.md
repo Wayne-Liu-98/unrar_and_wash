@@ -10,6 +10,7 @@ data_structure.txt shows data structure in each of csv file.
 
 The two test .sh files are test versions that generates washed csv for 20200803 under relative directory in wash_and_rar
 
+Program deleted from github because of confidential reasons.
 
 Working period:
 -------------------------
