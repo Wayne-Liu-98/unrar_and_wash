@@ -1,6 +1,6 @@
 Introdunction:
 --------------------------
-test.sh is a shell script that unrar the given rar file and activate wash.py.
+batch_unrar.sh is a shell script that unrar the given rar file and activate wash.py. The unrar function comes from unrar.sh, and our batch_unrar.sh takes start_date and end_date parameters (to be modified directly in the script file.)
 
 wash.py washes the data and generates a summary csv file.
 
